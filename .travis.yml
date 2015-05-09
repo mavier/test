@@ -3,7 +3,7 @@ python:
 - '2.7'
 install:
 - git fetch --tags
-- export GIT_TAG=$(git describe --tags | cut -c 2-5)-$TRAVIS_BUILD_NUMBER
+- export GIT_TAG=$(git describe --tags | cut -c 2-5)$TRAVIS_BUILD_NUMBER
 - echo -n $GIT_TAG > VERSION
 - echo $GIT_TAG
 - python setup.py install
