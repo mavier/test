@@ -10,7 +10,7 @@ script: py.test
 after_success:
 - git config --global user.email "builds@travis-ci.com"
 - git config --global user.name "Travis CI"
-- git tag $GIT_TAG -a -m "Generated tag for build $TRAVIS_BUILD_NUMBER"
+- git tag $GIT_TAG -a -m "version $GIT_TAG"
 - git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG > /dev/null 2>&1
 notifications:
   email: true
