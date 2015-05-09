@@ -1,0 +1,18 @@
+language: python
+python:
+- '2.6'
+- '2.7'
+install:
+- git describe --tags | cut -c 2- > VERSION
+- python setup.py install
+script: py.test 
+after_success:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=$(git describe --tags)-$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
+  - git push origin $GIT_TAG
+  - coverage combine
+  - coveralls
+notifications:
+  email: true
