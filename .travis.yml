@@ -2,6 +2,7 @@ language: python
 python:
 - '2.7'
 install:
+- git fetch --tags
 - git describe --tags | cut -c 2- > VERSION
 - cat VERSION
 - python setup.py install
