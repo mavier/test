@@ -6,3 +6,6 @@ w
 b
 c
 c
+c
+d
+e
