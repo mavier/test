@@ -15,12 +15,10 @@ script: py.test
 after_success:
 - git config --global user.email "builds@travis-ci.com"
 - git config --global user.name "Travis CI"
-- export LAST=$(git rev-parse HEAD^1)
-- echo $LAST
-- git merge master
-- env
-- git1 tag v$GIT_TAG -a -m "version $GIT_TAG" $LAST > /dev/null 2>&1 
-- git1 push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG v$GIT_TAG > /dev/null 2>&1
+- git checkout master || exit
+- git merge "$TRAVIS_COMMIT" || exit
+- git tag v$GIT_TAG -a -m "version $GIT_TAG" > /dev/null 2>&1 
+- git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG v$GIT_TAG > /dev/null 2>&1
 notifications:
   email: true
 branches:
