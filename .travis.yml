@@ -15,7 +15,9 @@ script: py.test
 after_success:
 - git config --global user.email "builds@travis-ci.com"
 - git config --global user.name "Travis CI"
-- git tag v$GIT_TAG -a -m "version $GIT_TAG" > /dev/null 2>&1 
+- export LAST=$(git rev-parse HEAD^1)
+- echo $LAST
+- git tag v$GIT_TAG -a -m "version $GIT_TAG" $LAST > /dev/null 2>&1 
 - git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG v$GIT_TAG > /dev/null 2>&1
 notifications:
   email: true
