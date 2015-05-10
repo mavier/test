@@ -17,9 +17,8 @@ after_success:
 - git config --global user.name "Travis CI"
 - git checkout master || exit
 - git merge "$TRAVIS_COMMIT" || exit
-- git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG master > /dev/null 2>&1
 - git tag v$GIT_TAG -a -m "version $GIT_TAG" > /dev/null 2>&1 
-- git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG v$GIT_TAG > /dev/null 2>&1
+- git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG master --tags > /dev/null 2>&1
 notifications:
   email: true
 branches:
