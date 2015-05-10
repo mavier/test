@@ -22,6 +22,9 @@ notifications:
 branches:
   only:
     - master
+branches:
+  except:
+    - develop
 env:
   global:
     secure: DSwjYVZSPSsp92xj089Re0cE/FX/Kbq0IGosOWmpb6mXhdcQnPNbCTD/PZIBqSvMhYLzwT73f/R3Bkl/caHYWq57bHzCScfILRGvFAPCLeXeFuYEqRZk2UQYW1CgAA9SPT2go3ejObgUls1PhLsyyGM+sl4JCo/Ew1pjRc53fbPbx+MObqEnKpGqaM5MOsjJkxum0JCvjpOlBrhaCu+v06g/1WmblNMMgmQ0Hhns5SXS/0KFFqxJ2PsgcDbcA7bZ5ZRWr/sgId9K9IoOEw3BtPm8Zv5iZjar+92jBFBUSd86TDqI/0GFJO0Ql9u3nZQkHvVte3fkUk7N6uaCYHQAiNNDghoJT6fbadlgLEGS0xi1U85TbOPLwBrOol0Dv+uTY2eyOS5DQSdxE/GtXdCwiTiFdGe+61okfH+oDa9lyKq1gQJJe4RdvmKLCMNPm1maTzKoELocG7b5LNNGcn0PzEAJ1I01YqR65JaOvNVBMcRZxeppEnMpr1sxN9FFgFOB1FqKBwwjmWlXn62hvCMz4RCsCpnnXixn80HBMoQQ/8qstv52CcaAygQXfXok3jz4+fwcMBaIuN1WZh19+CTd374CC1di/BTiswRlea8CQYT9ygRU+scHgV3W2rQAw9G+9EVFIRKZ2Tq9YBa4KtrakWRfYMKQtDIxifwsThTsqfA=
