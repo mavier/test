@@ -3,7 +3,7 @@ python:
 - '2.7'
 install:
 - git fetch --tags
-- export BUILD=$(git describe master --tags | cut -d'.' -f3 | cut -d'-' -f1)
+- export BUILD=$(git describe --tags | cut -d'.' -f3 | cut -d'-' -f1)
 - echo $BUILD
 - export BUILD=$((BUILD+1))
 - echo $BUILD
