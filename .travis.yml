@@ -4,8 +4,8 @@ python: 2.7
 env:
     - TOX_ENV=pyflakes
     - TOX_ENV=docs
-    - TOX_ENV=py26-twcurrent
-    - TOX_ENV=py27-twcurrent
+    - TOX_ENV=py26
+    - TOX_ENV=py27
 
 install:
     - pip install tox
