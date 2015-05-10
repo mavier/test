@@ -8,7 +8,7 @@ env:
     - TOX_ENV=py27-twcurrent
 
 install:
-    - ./.travis/install.sh
+    - pip install tox
 
 script: tox -e $TOX_ENV
 
