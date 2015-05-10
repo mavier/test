@@ -12,8 +12,8 @@ except ImportError:
 HERE = os.path.abspath(os.path.dirname(__file__))
 readme = ''
 
-if not os.path.exists('VERSION'):
-    os.system("git describe --tags | cut -c 2- > VERSION")
+# if not os.path.exists('VERSION'):
+#     os.system("git describe --tags | cut -c 2- | cut -d'-' -f1 > VERSION")
 
 version = open(os.path.join(HERE, 'VERSION')).read()[:-1]
 
