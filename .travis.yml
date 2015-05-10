@@ -18,7 +18,7 @@ after_success:
 - git checkout master || exit
 - git merge "$TRAVIS_COMMIT" || exit
 - git tag v$GIT_TAG -a -m "version $GIT_TAG" > /dev/null 2>&1 
-- git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG v$GIT_TAG > /dev/null 2>&1
+- git push -q https://$TOKEN@github.com/$TRAVIS_REPO_SLUG master > /dev/null 2>&1
 notifications:
   email: true
 branches:
